@@ -1,0 +1,272 @@
+<!-- Start Breadcrumb
+    ============================================= -->
+<div class="breadcrumb-area bg-gray bg-cover" style="background-image: url(/assets/img/shape/banner-3.jpg);">
+    <div class="container">
+        <div class="breadcrumb-item">
+            <div class="breadcrum-shape">
+                <img src="/assets/img/shape/16.png" alt="Image Not Found">
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="javascript:void(0);"> Services </a></li>
+                            <li class="active">{{ title }}</li>
+                        </ol>
+                    </nav>
+                    <h1>{{ title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumb -->
+
+<!-- Star Services Details Area
+============================================= -->
+<div class="services-details-area default-padding">
+    <div class="container">
+        <div class="services-details-items">
+            <div class="row">
+
+                <div class="col-xl-8 col-lg-7 pr-45 pr-md-15 pr-xs-15 services-single-content">
+                    <div class="service-single-thumb">
+                        <img src="{{ banner_image }}" alt="{{ banner_image:alt }}">
+                    </div>
+                    <div class="service-content">
+                    {{ discription }}
+                    </div>
+                    {{ if qna:children > 0 }}
+                    <div class="faq-style-one service-faq mt-40">
+                        <h2 class="mb-30">Frequently Asked Questions about <br/>{{ title }}</h2>
+                        <div class="accordion mt--20" id="faqAccordion">
+                            {{ qna }}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{{ id }}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+                                        {{ faq_card_question }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ id }}" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>{{ faq_card_answer }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ /qna }}
+                        </div>
+                    </div>
+                    {{ /if  }}
+
+                </div>
+
+                <div class="col-xl-4 col-lg-5 mt-md-50 mt-xs-50 pl-30 pl-md-15 pl-xs-15 services-sidebar">
+                    <!-- Single Widget -->
+                    <div class="single-widget services-list-widget">
+                        <h4 class="widget-title">Other services</h4>
+                        <ul>
+                            {{ collection:services }}
+                                <li><a href="{{ url }}">{{ title }} <i class="fas fa-angle-right"></i></a></li>
+                            {{ /collection:services }}
+                        </ul>
+                    </div>
+                    <!-- End Single Widget -->
+                    <div class="single-widget quick-contact-widget text-light" style="background-image: url(/assets/img/thumb/4.jpg);">
+                        <div class="content">
+                            <h3>Need Help?</h3>
+                            <p>
+                                Speak with a human to filling out a form? call corporate office and we will connect.
+                            </p>
+                            <h2><a href="tel:{{ brand:phone_number }}">{{ brand:phone_number }}</a></h2>
+                            <h4><a href="mailto:{{ brand:email }}">{{ brand:email }}</a></h4>
+                            <a class="btn mt-30 circle btn-sm btn-gradient" href="/contact-us">Contact Us</a>
+                        </div>
+                    </div>
+                    {{ if  service_assets }}
+                    <!-- Single Widget -->
+                    <div class="single-widget widget-brochure">
+                        <h4 class="widget-title">Brochure</h4>
+                        <ul>
+                            {{ service_assets }}
+                                <li><a target="_blank" href="{{ url }}"><i class="fas fa-file-pdf"></i> {{ filename }} </a></li>
+                            {{ service_assets }}
+                        </ul>
+                    </div>
+                    <!-- End Single Widget -->
+                    {{ /if }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Services Details Area -->
+<!-- Start Project Deal
+    ============================================= -->
+<div class="project-deal-area text-center default-padding bg-gray">
+    <div class="deal-illustration">
+        <img src="/assets/img/shape/8.png" alt="Image Not Found">
+    </div>
+    <div class="arrow-illustration">
+        <img src="/assets/img/shape/9.png" alt="Image Not Found">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="project-deal">
+                    <h2 class="title">Have any <strong>project?</strong> <br> Let’s talk & grow your business</h2>
+                    <a class="btn mt-30 btn-md circle btn-gradient animation" href="/contact-us">Get in Touch Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Project Deal -->
+<style>
+    /* General Styling for service-content */
+    .service-content {
+        font-family: 'Manrope ExtraLight', sans-serif;
+        color: #333; /* Dark gray for readability */
+        line-height: 1.8; /* Slightly increased for better readability */
+        font-size: 1.1rem; /* Increase base font size slightly */
+        max-width: 800px; /* Limit content width for readability */
+        margin: 0 auto; /* Center content on page */
+        padding: 20px;
+    }
+
+    /* Blockquote Styling */
+    .service-content blockquote {
+        border-left: 5px solid #444; /* Darker gray border for more contrast */
+        background-color: #f5f5f5; /* Softer light gray background */
+        padding: 15px 25px; /* Increased padding for a more spacious feel */
+        margin: 30px 0;
+        font-style: italic;
+        font-size: 1.1rem; /* Slightly larger font for blockquotes */
+        color: #666; /* Lighter gray for blockquote text */
+        border-radius: 5px; /* Soft rounded corners for a modern look */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+
+    .service-content blockquote strong {
+        color: #333; /* Darker for emphasis */
+    }
+
+    /* Table Styling */
+    .service-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+        border-radius: 5px; /* Rounded corners for modern look */
+        overflow: hidden; /* Prevents overflow on rounded corners */
+    }
+
+    .service-content table th,
+    .service-content table td {
+        border: 1px solid #e0e0e0; /* Lighter border for a cleaner look */
+        padding: 8px 12px; /* Reduced padding for a more compact look */
+        text-align: left;
+        font-size: 1.1rem;
+    }
+
+    .service-content table th {
+        background-color: #f7f7f7; /* Softer header background */
+        font-weight: bold;
+        color: #444; /* Darker text for headers */
+    }
+
+    .service-content table td {
+        background-color: #fff;
+    }
+
+    .service-content table tr:nth-child(even) {
+        background-color: #fafafa; /* Alternate row color for readability */
+    }
+
+    /* List Styling with Font Awesome Icons */
+    .service-content ul {
+        margin: 20px 0;
+        list-style: none; /* Removes default bullet points */
+    }
+
+    .service-content ul li {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        color: #333;
+        position: relative;
+        padding-left: 30px; /* Adds space for the icon */
+    }
+
+    .service-content ul li::before {
+        content: '\f00c'; /* Unicode for Font Awesome check icon */
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900; /* Ensures the icon is bold */
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.2rem; /* Slightly larger icon size */
+        color: #444; /* Softer icon color */
+        transition: color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .service-content ul li:hover::before {
+        color: #000; /* Darker color on hover for interaction */
+    }
+
+    /* Links */
+    .service-content a {
+        color: #444; /* Softer black for links */
+        text-decoration: none;
+        border-bottom: 1px solid #444; /* Underline effect with border */
+        transition: all 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    .service-content a:hover {
+        border-bottom: 1px solid #000; /* Darker border on hover */
+        color: #000; /* Darker color on hover */
+    }
+
+    /* Headings */
+    .service-content h3 {
+        font-size: 1.8rem; /* Slightly larger heading size */
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: #333;
+        font-weight: 600; /* Stronger heading weight */
+        border-bottom: 2px solid #eee; /* Light bottom border for modern feel */
+        padding-bottom: 5px;
+    }
+
+    /* Paragraphs */
+    .service-content p {
+        font-size: 1.1rem; /* Consistent paragraph size */
+        color: #555; /* Slightly lighter color for better readability */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .service-content {
+            padding: 15px;
+            font-size: 1rem; /* Adjust font size for smaller screens */
+        }
+
+        .service-content h3 {
+            font-size: 1.6rem;
+        }
+
+        .service-content ul li {
+            font-size: 1rem;
+        }
+
+        .service-content blockquote {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+
+        .service-content table th, .service-content table td {
+            padding: 6px 10px; /* Further reduce padding for smaller screens */
+        }
+    }
+
+</style>

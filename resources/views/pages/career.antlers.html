@@ -1,0 +1,147 @@
+<!-- Start Breadcrumb
+    ============================================= -->
+<div class="breadcrumb-area bg-gray bg-cover" style="background-image: url(assets/img/shape/banner-3.jpg);">
+    <div class="container">
+        <div class="breadcrumb-item">
+            <div class="breadcrum-shape">
+                <img src="assets/img/shape/16.png" alt="Image Not Found">
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                            <li class="active">{{ title }}</li>
+                        </ol>
+                    </nav>
+                    <h1>Get in touch with us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumb -->
+
+<!-- Start Contact Us
+============================================= -->
+<div class="contact-area contact-page bg-gray overflow-hidden default-padding" style="background-image: url(assets/img/shape/map.png);">
+    <div class="shape-right-bottom">
+        <img src="assets/img/shape/18.png" alt="Shape">
+    </div>
+    <div class="container">
+        <div class="row align-center">
+
+            <div class="col-tact-stye-one col-lg-6">
+                <div class="contact-form-style-one">
+                    {{ form:create in="contact_us" }}
+                        {{ if success }}
+                            <h2><i class="fa fa-thumbs-up"></i> Voilá! We have received your application.</h2>
+                        {{ /if }}
+                        <input type="hidden" name="page_url" value="{{ url }}" />
+                        <input type="hidden" name="type" value="Job Application" />
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input class="form-control" id="name" name="name" placeholder="Name" type="text">
+                                    <span class="alert-error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="email" name="email" placeholder="Email*" type="email">
+                                    <span class="alert-error"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="phone" name="phone_number" placeholder="Phone" type="text">
+                                    <span class="alert-error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group comments">
+                                    <textarea class="form-control" id="comments" name="comments" placeholder="Your Message*"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group comments">
+                                    <input class="form-control" id="resume" name="attachment" placeholder="attachment" type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button type="submit" name="submit" id="submit">
+                                    <i class="fa fa-paper-plane"></i> Get in Touch
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Alert Message -->
+                        <div class="col-lg-12 alert-notification">
+                            <div id="message" class="alert-msg"></div>
+                        </div>
+                    {{ /form:create }}
+                </div>
+            </div>
+
+            <div class="col-tact-stye-one col-lg-5 offset-lg-1 mt--80 mt-md-50 mt-xs-50">
+                <div class="contact-style-one-info">
+                    <div class="mb-40">
+                        <h2>Contact Information</h2>
+                        <p>
+                            Plan upon yet way get cold spot its week. <br> Almost do am or limits hearts. Resolve parties.
+                        </p>
+                    </div>
+                    <ul class="contact-address">
+                        <li class="wow fadeInUp">
+                            <div class="content">
+                                <h4 class="title">Phone</h4>
+                                <a href="tel:{{ phone_number }}">{{ brand:phone_number }}</a>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp" data-wow-delay="300ms">
+                            <div class="info">
+                                <h4 class="title">Location</h4>
+                                <p>{{ brand:address }}</p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp" data-wow-delay="500ms">
+                            <div class="info">
+                                <h4 class="title">Official Email</h4>
+                                <a href="mailto:{{ brand:email }}">{{ brand:email }}</a>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp" data-wow-delay="700ms">
+                            <div class="info">
+                                <h4 class="title">Follow Us</h4>
+                                <ul class="social-link">
+                                    {{ if brand:facebook }}
+                                        <li><a href="{{ brand:facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                                    {{ /if }}
+                                    {{ if brand:instagram }}
+                                        <li><a href="{{ brand:instagram }}"><i class="fab fa-instagram"></i></a></li>
+                                    {{ /if }}
+                                    {{ if brand:twitter }}
+                                        <li><a href="{{ brand:twitter }}"><i class="fab fa-twitter"></i></a></li>
+                                    {{ /if }}
+                                    {{ if brand:linked_in }}
+                                        <li><a href="{{ brand:linked_in }}"><i class="fab fa-linkedin-in"></i></a></li>
+                                    {{ /if }}
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Contact -->

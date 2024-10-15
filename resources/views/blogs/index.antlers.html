@@ -1,0 +1,117 @@
+<!-- Start Breadcrumb
+    ============================================= -->
+<div class="breadcrumb-area bg-gray bg-cover" style="background-image: url(assets/img/shape/banner-3.jpg);">
+    <div class="container">
+        <div class="breadcrumb-item">
+            <div class="breadcrum-shape">
+                <img src="assets/img/shape/16.png" alt="Image Not Found">
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                            <li class="active">Blogs</li>
+                        </ol>
+                    </nav>
+                    <h1>Our Blogs</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumb -->
+
+<!-- Start Blog
+============================================= -->
+<div class="blog-area blog-grid-colum default-padding">
+    <div class="container">
+        {{ collection:blogs paginate="3" as="posts"}}
+        <div class="row">
+            {{ posts }}
+                <div class="col-lg-4 col-md-6 mb-50">
+                <div class="blog-style-one">
+                    <div class="thumb">
+                        <a href="{{ url }}"><img src="{{ thumbnail_image }}" alt="{{ thumbnail_image:alt }}"></a>
+                    </div>
+                    <div class="info">
+                        <div class="meta">
+                            <ul>
+                                <li><a href="#">{{ author:name }}</a></li>
+                                <li>{{ date }}</li>
+                            </ul>
+                        </div>
+                        <h3 class="post-title"><a href="{{ url }}">{{ title }}</a></h3>
+                        <a href="{{ url }}" class="button-regular">
+                            Continue Reading <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{ /posts }}
+        </div>
+            {{ paginate }}
+        <div class="row">
+        <div class="col-md-12 pagi-area text-center">
+        <nav aria-label="navigation">
+            <ul class="pagination">
+            {{ if prev_page }}
+                    <li class="page-item"><a class="page-link" href="{{ prev_page }}">&laquo;</a></li>
+                {{ else }}
+                    <li class="page-item disabled"><a  class="page-link">&laquo;</a></li>
+                {{ /if }}
+
+                {{ links:segments }}
+
+                {{ first }}
+                {{ if page == current_page }}
+                    <li class="page-item active"><a href="javascript:void(0);" class="page-link">{{ page }}</a></li>
+                {{ else }}
+                    <li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+                {{ /if }}
+                {{ /first }}
+
+                {{ if slider }}
+                    <li class="page-item disabled"><span>...</span></li>
+                {{ /if }}
+
+                {{ slider }}
+                {{ if page == current_page }}
+                    <li class="page-item active"><a href="javascript:void(0);" class="page-link">{{ page }}</a></li>
+                {{ else }}
+                    <li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+                {{ /if }}
+                {{ /slider }}
+
+                {{ if slider || (!slider && last) }}
+                    <li class="page-item disabled"><span>...</span></li>
+                {{ /if }}
+
+                {{ last }}
+                {{ if page == current_page }}
+                    <li class="page-item active"><span>{{ page }}</span></li>
+                {{ else }}
+                    <li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+                {{ /if }}
+                {{ /last }}
+
+                {{ /links:segments }}
+
+                {{ if next_page }}
+                    <li class="page-item"><a class="page-link" href="{{ next_page }}">&raquo;</a></li>
+                {{ else }}
+                    <li class="page-item disabled"><a class="page-link">&raquo;</a></li>
+                {{ /if }}
+            </ul>
+        </nav>
+        </div>
+        </div>
+            {{ /paginate }}
+
+
+
+        {{ /collection:blogs }}
+
+    </div>
+</div>
+<!-- End Blog -->

@@ -1,0 +1,167 @@
+<!-- Start Breadcrumb
+   ============================================= -->
+<div class="breadcrumb-area bg-gray bg-cover" style="background-image: url(assets/img/shape/banner-3.jpg);">
+    <div class="container">
+        <div class="breadcrumb-item">
+            <div class="breadcrum-shape">
+                <img src="assets/img/shape/16.png" alt="Image Not Found">
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                            <li class="active">{{ title }}</li>
+                        </ol>
+                    </nav>
+                    <h1>{{ title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumb -->
+
+<!-- Start About
+============================================= -->
+<div class="about-style-two-area default-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 about-style-two">
+                <div class="about-two-thumb">
+                    <img src="{{ au_image }}" alt="{{ au_image:alt }}">
+                    <div class="experience">
+                        <h2><strong>18</strong> Years Experience</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 about-style-two pl-50 pl-md-15 pl-xs-15 mt-60 mt-xs-40">
+                <div class="about-two-info">
+                    <h4 class="sub-title">About our compnay</h4>
+                    <h2 class="title">{{ au_heading }}</h2>
+                    <p>{{ au_description }}</p>
+                    <div class="about-grid-info">
+                        <a class="btn-round-animation" href="#">Discover More <i class="fas fa-arrow-right"></i></a>
+                        <ul class="list-info-item">
+                            {{ au_services }}
+                                <li><h4><a href="{{ url }}">{{ title }} <i class="fas fa-angle-right"></i></a></h4></li>
+                            {{ /au_services }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End About -->
+
+<!-- Start Why Choose Us
+============================================= -->
+<div class="choose-us-style-two-area default-padding bg-dark text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="choose-us-style-two">
+                    <h2 class="title mb-50">{{ is_heading }}</h2>
+                    <ul class="check-list-item">
+                        <li>
+                            <h4>{{ is_vision_title }}</h4>
+                            <p>{{ is_vision_statement }}</p>
+                        </li>
+                        <li>
+                            <h4>{{ is_mission_title }}</h4>
+                            <p>{{ is_mission_statement }}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-7 offset-xl-1 text-end">
+                <div class="choose-us-style-two-thumb">
+                    <div class="curve-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" version="1.1">
+                            <path id="textPath" d="M 0,75 a 75,75 0 1,1 0,1 z"></path>
+                            <text><textPath href="#textPath">{{ is_curved_text }}</textPath></text>
+                        </svg>
+                    </div>
+                    {{ is_tagline }}
+                    <img src="{{ is_image }}" alt="{{ is_image:alt }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Why Choose Us -->
+
+<!-- Start Testimonials
+============================================= -->
+<div class="testimonail-style-one-area default-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="testimonial-style-one-thumb">
+                    <h2 class="text-large">{{ ts_heading }}</h2>
+                    <img src="{{ ts_image }}" alt="{{ ts_image:alt }}">
+                </div>
+            </div>
+            <div class="col-lg-6 offset-lg-1 pt-200 pt-md-50 pt-xs-40">
+                <div class="testimonial-style-one-carousel swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                    {{ collection:testimonials }}
+                        <div class="swiper-slide">
+                            <div class="testimonial-style-one">
+                                <div class="item">
+                                    <div class="content">
+                                        <p>{{ content }}</p>
+                                    </div>
+                                    <div class="provider">
+                                        <div class="info">
+                                            <h4>{{ title }}</h4>
+                                            <span>{{ designation }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{ /collection:testimonials }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Testimonials -->
+
+<!-- Start Team
+============================================= -->
+<div class="team-style-two-area bg-gray default-padding-top pb-70 pb-xs-0">
+
+    <div class="container">
+        <div class="row align-center">
+            <!-- Single Item -->
+            <div class="col-xl-6 col-lg-12">
+                <div class="site-heading">
+                    <h5 class="sub-title">Team members</h5>
+                    <h2 class="title">{{ ot_heading }}</h2>
+                </div>
+            </div>
+            <!-- End Single Item -->
+            {{ collection:team }}
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-50 wow fadeInUp">
+                    <div class="team-style-two">
+                        <div class="thumb">
+                            <img src="{{ picture }}" alt="{{ picture:alt }}">
+                            <div class="team-info">
+                                <div class="content">
+                                    <h4><a href="javascript:void(0);">{{ title }}</a></h4>
+                                    <span>{{ designation }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:team }}
+        </div>
+    </div>
+</div>
+<!-- End Team -->

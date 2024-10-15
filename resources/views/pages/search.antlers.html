@@ -1,0 +1,100 @@
+<!-- Start Breadcrumb
+    ============================================= -->
+<div class="breadcrumb-area bg-gray bg-cover" style="background-image: url(assets/img/shape/banner-3.jpg);">
+    <div class="container">
+        <div class="breadcrumb-item">
+            <div class="breadcrum-shape">
+                <img src="assets/img/shape/16.png" alt="Image Not Found">
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                            <li class="active">Search</li>
+                        </ol>
+                    </nav>
+                    <h1>Search Results for "<i>{{ get:q }}</i>"</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumb -->
+<!-- Start Blog
+    ============================================= -->
+<div class="blog-area full-blog blog-standard default-padding">
+    <div class="container">
+        <div class="row">
+            <div class="blog-content col-xl-10 offset-xl-1 col-md-12">
+                <div class="blog-item-box">
+                    <div class="blog-style-one item">
+                        <div class="info">
+                            {{ search:results index="blog" as="result" }}
+                                {{ if no_results }}
+                                    <h2 class="title">
+                                        <a href="{{ site:url }}">No Results for "<i>{{ get:q }}</i>" in Blogs</a>
+                                    </h2>
+                                {{ else }}
+                                    <h2 class="title">
+                                        <a href="javascript:void(0);">Found {{ result | count }} blogs for
+                                            <i>"{{ get:q }}"</i></a>
+                                    </h2>
+                                    <ul class="feature-list-item">
+                                        {{ result }}
+                                            <li><a href="{{ url }}">{{ title }}</a></li>
+                                        {{ /result }}
+                                    </ul>
+                                {{ /if }}
+                            {{ /search:results }}
+                        </div>
+                    </div>
+                    <div class="blog-style-one item">
+                        <div class="info">
+                            {{ search:results index="services" as="result" }}
+                                {{ if no_results }}
+                                    <h2 class="title">
+                                        <a href="{{ site:url }}">No Results for "<i>{{ get:q }}</i>" in Services</a>
+                                    </h2>
+                                {{ else }}
+                                    <h2 class="title">
+                                        <a href="javascript:void(0);">Found {{ result | count }} services for
+                                            <i>"{{ get:q }}"</i></a>
+                                    </h2>
+                                    <ul class="feature-list-item">
+                                        {{ result }}
+                                        <li><a href="{{ url }}">{{ title }}</a></li>
+                                        {{ /result }}
+                                    </ul>
+                                {{ /if }}
+                            {{ /search:results }}
+                        </div>
+                    </div>
+                    <div class="blog-style-one item">
+                        <div class="info">
+                            {{ search:results index="projects" as="result" }}
+                                {{ if no_results }}
+                                    <h2 class="title">
+                                        <a href="{{ site:url }}">No Results for "<i>{{ get:q }}</i>" in Projects</a>
+                                    </h2>
+                                {{ else }}
+                                    <h2 class="title">
+                                        <a href="javascript:void(0);">Found {{ result | count }} projects for
+                                            <i>"{{ get:q }}"</i></a>
+                                    </h2>
+                                    <ul class="feature-list-item">
+                                        {{ result }}
+                                        <li><a href="{{ url }}">{{ title }}</a></li>
+                                        {{ /result }}
+                                    </ul>
+                                {{ /if }}
+                            {{ /search:results }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Blog -->
